@@ -290,10 +290,7 @@ const fetchDashboardData = async () => {
         if (subscription) {
           const newStatus = subscription.status || 'pending';
           
-          // Only show notification if:
-          // 1. Status changed to approved
-          // 2. We haven't shown the approval notification yet in this session
-          // 3. Check if we don't already have an approval notification
+    
           if (newStatus === 'approved' && 
               !approvalNotificationShown && 
               !notifications.some(notif => notif.title.includes('Plot Application Approved'))) {
